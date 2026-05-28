@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Amazon</title>
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial;
+        }
+        .navbar{
+            height:60px;
+            background-color:#0f1111;
+            display:flex;
+            align-items:center;
+            color:white;
+            justify-content:space-evenly;
+        }
+        .nav-logo{
+            height:50px;
+            width:140px;
+            border:1px solid transparent;
+            display:flex;
+            align-items:center;
+        }
+        .nav-logo:hover{
+            border:1px solid white;
+        }
+        .logo{
+            height:50px;
+            width:100%;
+            background-image:url("https://tse4.mm.bing.net/th/id/OIP.ArzNv7aQ_fdcIJhHBS_wrwHaGL?pid=Api&h=220&P=0");
+            background-size:100% 100%;
+            background-repeat:no-repeat;
+        }
+        .nav-add{
+            width:220px;
+            height:50px;
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            border: 1px solid transparent;
+            margin-left:10px;
+           
+        }
+        .nav-add:hover{
+            border:1px solid white;
+        }
+        .del{
+            margin-left:15px;
+            font-size:12px;
+        }
+        .in{
+            margin-left:5px;
+            font-weight:bold;
+            font-size: 14px;;
+        }
+        .add-icon{
+            display:flex;
+            align-items: center;
+        }
+        .nav-search{
+            width:400px;
+            height:60px;
+            
+            display: flex;
+            align-items: center;
+            margin-left:10px;
+            border-radius: 6px;
+        }
+        .nav-search:hover{
+            outline:2px solid orange;
+        }
+    
+        .search-select{
+            background-color:#f3f3f3;
+            height:40px;
+            color:#0f1111;
+            width:60px;
+            border:none;
+            border-top-left-radius:4px;
+            border-bottom-left-radius:4px;
+        }    
+        .search-input{
+            width:340px;
+            height:40px;
+            border:none;
+            outline:none;
+            padding-left:10px;
+            font-size:14px;
+
+        }
+        
+        .mag{
+            background-color:#febd69;
+            width:38px;
+            height:40px;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            text-align:center;
+            font-size: large;
+            border-top-right-radius:4px;
+            border-bottom-right-radius:4px;
+        }
+        .nav-language{
+            height:50px;
+            width:90px;
+            margin-left:15px;
+            display:flex;
+            align-items:center;
+            border:1px solid transparent;
+        }
+        .nav-language:hover{
+            border:1px solid white;
+        }
+        .flag{
+            width:20px;
+            height:15px;
+        }
+        .lang-select{
+            background-color:transparent;
+            color:white;
+            font-weight:bold;
+            margin-left:5px;
+        }
+        .hellosi{
+            width:140px;
+            height:50px;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            border:1px solid transparent;
+        }
+        .hellosi:hover{
+            border:1px solid white;
+        }
+        .hello{
+            font-size: 12px;
+        }
+        .acc{
+            font-size:14px;
+            font-weight:bold;
+        }
+        .navre{
+            width:80px;
+            height:50px;
+            color:white;
+            margin-left:10px;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            border:1px solid transparent;
+        }
+        .navre:hover{
+            border:1px solid white;
+        }
+        .re{
+            color:weight;
+            font-size: small;
+        }
+        .ret{
+            font-weight: bold;
+            color:white;
+        }
+        .nav-cart{
+            width:55px;
+            height:50px;
+            border:1px solid transparent;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .nav-cart:hover{
+            border:1px solid white;
+        }
+        .nav-cart i{
+            font-size:30px;
+        }
+        .panel{
+            height:40px;
+            background-color:#0f1111;
+            color:white;  
+            display: flex;
+            align-items: center;
+        }
+        .men{
+            width:59px;
+            margin-left:5px;
+            height:39px;
+            font-weight:bold;
+            border:1px solid transparent;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .men:hover{
+            border:1px solid white;
+        }
+        .f{
+            width:2000px;
+            margin-left:10px;
+            height:39px;
+            display: flex;
+            align-items: center;
+        }
+        .f p{
+            height:39px;
+            display:flex;
+            align-items:center;
+            padding:0 10px;
+            border:1px solid transparent;
+            margin-left: 10px;
+        }
+        .f p:hover{
+            border:1px solid white;
+        }
+        .z{
+            height:39px;
+            display:flex;
+            align-items:center;
+            justify-content: center;
+            padding:0 10px;
+            border:1px solid transparent;
+            margin-right:10px;
+        }
+        .z:hover{
+            border:1px solid white;
+        }
+        .hero-section{
+            height:330px;
+            background-image:url("https://m.media-amazon.com/images/I/71h15GsHkvL._SX3000_.jpg");
+            background-size:cover;
+            background-repeat:no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items:flex-end;
+           
+
+        }
+        .hero-mes{
+            width: 80%;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color:white;
+            margin-bottom: 20px;
+            border: 2px solid transparent;
+        }
+        .hero-mes:hover{
+            border:2px solid black;
+        }
+        .shop-section{
+            padding: 20px;
+            display:flex;
+            align-items: center;
+            justify-content: space-evenly;
+            background-color:orangered;
+            flex-wrap: wrap;
+        }
+        .box{
+            border:2px solid black;
+            height:300px;
+            width:22%;
+            background-color: #f3f3f3;
+            padding: 20px 0px 15px;
+        }
+        .foot-panel1{
+            background-color:darkslategray;
+            color:white;
+            height:41px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.85rem;
+            text-align: center;
+        }
+        .foot-panel2{
+            background-color:#131A22;
+            color:white;
+            height:270px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        ul a{
+            display:block;
+            margin-top: 10px;
+            font-size: 0.85rem;
+        }
+        ul p{
+            font-weight: bold;
+        }
+        ul{
+            margin-top: 15px;
+        }
+        .foot-panel3{
+            background-color:#131A22;
+            border:1px solid white;
+            display: flex;
+            justify-content: center;
+        }
+        .logo{
+            height:75px;
+            background-image:url("https://tse4.mm.bing.net/th/id/OIP.ArzNv7aQ_fdcIJhHBS_wrwHaGL?pid=Api&h=220&P=0");
+            background-size:100% 100%;
+            width:150px;
+            margin-left: 50px;
+        }
+        .foot-panel4{
+            background-color: #0f1111;
+            color:white;
+            flex-direction: column;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="nav-logo">
+                <div class="logo"></div>
+            </div>
+            <div class="nav-add">
+                <p class="del">Delivering to Nellore 524002</p>
+                <div class="add-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p class="in">Update location</p>
+                </div>
+            </div>
+            <div class="nav-search">
+                <select class="search-select">
+                    <option>All</option>
+                </select>
+                <input placeholder="Search Amazon.in" class="search-input">
+                <div class="mag">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+            <div class="nav-language">
+                <img src="https://images6.alphacoders.com/911/911295.png" class="flag">
+                <select class="lang-select">
+                    <option>EN</option>
+                    <option>HI</option>
+                    <option>TE</option>
+                </select>
+            </div>
+            <div class="hellosi">
+                <p class="hello">Hello,sign in</p>
+                <p class="acc">Accounts and Lists</p>
+            </div>
+            <div class="navre">
+                <p class="re">Returns</p>
+                <p class="ret">& Orders</p>
+            </div>
+            <div class="nav-cart">
+                <i class="fa-solid fa-cart-arrow-down"></i>
+
+            </div>
+        </div>
+        <div class="panel">
+            <div class="men">
+                <i class="fa-solid fa-bars"></i>
+                All
+            </div>
+            <div class="f">
+                <p>Today's deals</p>
+                <p>MX player</p>
+                <p>Sell</p>
+                <p>Best Sellers</p>
+                <p>Mobiles</p>
+                <p>Fresh</p>
+                <p>New Releases</p>
+                <p>Customer Service</p>
+            </div>
+            <div class="z">Prime
+                <i class="fa-solid fa-angle-down"></i>
+            </div>
+        </div>
+    </header>
+    <div class="hero-section">
+        <div class="hero-mes">
+            <p>Welcome to Amazon platform.</p>
+            <a href="">Click here.</a>
+        </div>
+    </div>
+    <div class="shop-section">
+        <div class="box">
+            <h1 style="font-weight:bold;font-size:medium;text-align:center;">
+                Laptop
+            </h1>
+            <div style="height:250px;background-image:url('https://m.media-amazon.com/images/I/61Dw5Z8LzJL._AC_SY200_.jpg');
+            background-size:contain;background-repeat:no-repeat;margin-top:15px;">
+            </div>
+        </div>
+        <div class="box">
+            <h1 style="font-weight:bold;font-size:medium;text-align:center;">
+                Laptop
+            </h1>
+            <div style="height:250px;background-image:url('https://m.media-amazon.com/images/I/61Dw5Z8LzJL._AC_SY200_.jpg');
+            background-size:contain;background-repeat:no-repeat;margin-top:15px;">
+            </div>
+        </div>
+        <div class="box">
+            <h1 style="font-weight:bold;font-size:medium;text-align:center;">
+                Laptop
+            </h1>
+            <div style="height:250px;background-image:url('https://m.media-amazon.com/images/I/61Dw5Z8LzJL._AC_SY200_.jpg');
+            background-size:contain;background-repeat:no-repeat;margin-top:15px;">
+            </div>
+        </div>
+        <div class="box">
+            <h1 style="font-weight:bold;font-size:medium;text-align:center;">
+                Laptop
+            </h1>
+            <div style="height:250px;background-image:url('https://m.media-amazon.com/images/I/61Dw5Z8LzJL._AC_SY200_.jpg');
+            background-size:contain;background-repeat:no-repeat;margin-top:15px;">
+            </div>
+        </div>
+        <div class="box">
+            <h1 style="font-weight:bold;font-size:medium;text-align:center;">
+                Laptop
+            </h1>
+            <div style="height:250px;background-image:url('https://m.media-amazon.com/images/I/61Dw5Z8LzJL._AC_SY200_.jpg');
+            background-size:contain;background-repeat:no-repeat;margin-top:15px;">
+            </div>
+        </div>
+        <div class="box">
+            <h1 style="font-weight:bold;font-size:medium;text-align:center;">
+                Laptop
+            </h1>
+            <div style="height:250px;background-image:url('https://m.media-amazon.com/images/I/61Dw5Z8LzJL._AC_SY200_.jpg');
+            background-size:contain;background-repeat:no-repeat;margin-top:15px;">
+            </div>
+        </div>
+        <div class="box">
+            <h1 style="font-weight:bold;font-size:medium;text-align:center;">
+                Laptop
+            </h1>
+            <div style="height:250px;background-image:url('https://m.media-amazon.com/images/I/61Dw5Z8LzJL._AC_SY200_.jpg');
+            background-size:contain;background-repeat:no-repeat;margin-top:15px;">
+            </div>
+        </div>
+        <div class="box">
+            <h1 style="font-weight:bold;font-size:medium;text-align:center;">
+                Laptop
+            </h1>
+            <div style="height:250px;background-image:url('https://m.media-amazon.com/images/I/61Dw5Z8LzJL._AC_SY200_.jpg');
+            background-size:contain;background-repeat:no-repeat;margin-top:15px;">
+            </div>
+        </div>
+        <div class="box">
+            <h1 style="font-weight:bold;font-size:medium;text-align:center;">
+                Laptop
+            </h1>
+            <div style="height:250px;background-image:url('https://m.media-amazon.com/images/I/61Dw5Z8LzJL._AC_SY200_.jpg');
+            background-size:contain;background-repeat:no-repeat;margin-top:15px;">
+            </div>
+        </div>
+        <div class="box">
+            <h1 style="font-weight:bold;font-size:medium;text-align:center;">
+                Laptop
+            </h1>
+            <div style="height:250px;background-image:url('https://m.media-amazon.com/images/I/61Dw5Z8LzJL._AC_SY200_.jpg');
+            background-size:contain;background-repeat:no-repeat;margin-top:15px;">
+            </div>
+        </div>
+        <div class="box">
+            <h1 style="font-weight:bold;font-size:medium;text-align:center;">
+                Laptop
+            </h1>
+            <div style="height:250px;background-image:url('https://m.media-amazon.com/images/I/61Dw5Z8LzJL._AC_SY200_.jpg');
+            background-size:contain;background-repeat:no-repeat;margin-top:15px;">
+            </div>
+        </div>
+        <div class="box">
+            <h1 style="font-weight:bold;font-size:medium;text-align:center;">
+                Laptop
+            </h1>
+            <div style="height:250px;background-image:url('https://m.media-amazon.com/images/I/61Dw5Z8LzJL._AC_SY200_.jpg');
+            background-size:contain;background-repeat:no-repeat;margin-top:15px;">
+            </div>
+        </div>
+        <div class="box">
+            <h1 style="font-weight:bold;font-size:medium;text-align:center;">
+                Laptop
+            </h1>
+            <div style="height:250px;background-image:url('https://m.media-amazon.com/images/I/61Dw5Z8LzJL._AC_SY200_.jpg');
+            background-size:contain;background-repeat:no-repeat;margin-top:15px;">
+            </div>
+        </div>
+        <div class="box">
+            <h1 style="font-weight:bold;font-size:medium;text-align:center;">
+                Laptop
+            </h1>
+            <div style="height:250px;background-image:url('https://m.media-amazon.com/images/I/61Dw5Z8LzJL._AC_SY200_.jpg');
+            background-size:contain;background-repeat:no-repeat;margin-top:15px;">
+            </div>
+        </div>
+        <div class="box">
+            <h1 style="font-weight:bold;font-size:medium;text-align:center;">
+                Laptop
+            </h1>
+            <div style="height:250px;background-image:url('https://m.media-amazon.com/images/I/61Dw5Z8LzJL._AC_SY200_.jpg');
+            background-size:contain;background-repeat:no-repeat;margin-top:15px;">
+            </div>
+        </div>
+        <div class="box">
+            <h1 style="font-weight:bold;font-size:medium;text-align:center;">
+                Laptop
+            </h1>
+            <div style="height:250px;background-image:url('https://m.media-amazon.com/images/I/61Dw5Z8LzJL._AC_SY200_.jpg');
+            background-size:contain;background-repeat:no-repeat;margin-top:15px;">
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="foot-panel1">
+            Back to Top
+        </div>
+        <div class="foot-panel2">
+            <ul>
+                <p>Get to Know Us</p>
+                <a>Careers</a>
+                <a>Blog</a>
+                <a>About Amazon</a>
+                <a>Investor Relations</a>
+                <a>Amazon Devices</a>
+                <a>Amazon Science</a>
+            </ul>
+            <ul>
+                <p>Get to Know Us</p>
+                <a>Careers</a>
+                <a>Blog</a>
+                <a>About Amazon</a>
+                <a>Investor Relations</a>
+                <a>Amazon Devices</a>
+                <a>Amazon Science</a>
+            </ul>
+            <ul>
+                <p>Get to Know Us</p>
+                <a>Careers</a>
+                <a>Blog</a>
+                <a>About Amazon</a>
+                <a>Investor Relations</a>
+                <a>Amazon Devices</a>
+                <a>Amazon Science</a>
+            </ul>
+
+        </div>
+        <div class="foot-panel3">
+            <div class="logo">
+            </div>
+        </div>
+        <div class="foot-panel4">
+            <div class="pages">
+                <a>Conditions of Use</a>
+                <a>Privacy Notice</a>
+                <a>Your Ads Privacy Choices</a>
+            </div>
+            <div class="copyright">
+                © 1996-2023, Amazon.com, Inc. or its affiliate
+            </div>
+        </div>
+        
+    </footer>
+</body>
+</html>
+
