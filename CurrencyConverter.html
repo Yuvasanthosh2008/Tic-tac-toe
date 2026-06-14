@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>currency converter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items:center;
+            min-height: 100vh;
+            background-color: bisque;
+        }
+        .container{
+            background-color: white;
+            padding:1rem;
+            border-radius:1rem;
+            width: 300px;
+            min-height: 70vh;
+            height:330px;
+        }
+        h1{
+            margin-top: 0px;
+        }
+        form{
+            margin-top: 2px;
+        }
+        form select,button,input{
+            width: 100%;
+            border:1px solid grey;
+            border-radius:0.9rem;
+        }
+        form input{
+            font-size: 1.7rem;
+        }
+        .dropdown{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            gap:1px
+        }
+        .dropdown i{
+            font-size: 1.5rem;
+            align-self: center;
+            margin-top: 50px;
+        }
+        .selectcont{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 1px;
+        }
+
+        .selectcont img{
+            width:50px;
+            height:auto;
+        }
+        form button{
+            width: 100%;
+            font-size: 1rem;
+            padding: 7px;
+            background-color: darkorchid;
+        }
+        .msg{
+           
+            margin: 1.5rem 0;
+            font-size: 1.1rem;
+            margin-top: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Currency Converter</h1>
+        <form>
+            <div class="amount">
+                <p>Enter Amount</p>
+                <input value="100" type="text"/>
+            </div>
+            <div class="dropdown">
+                <div class="from">
+                    <p>From</p>
+                    <div class="selectcont">
+                        <img src="https://flagsapi.com/US/flat/64.png">
+                        <select name="from">
+                            <option value="usd">USD</option>
+                            <option value="inr">INR</option>
+                            <option value="eur">EUR</option>
+                            <option value="aud">AUD</option>
+                        </select>
+                    </div>
+                </div>
+                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                <div class="to">
+                    <p>To</p>
+                    <div class="selectcont">
+                        <img src="https://flagsapi.com/IN/flat/64.png">
+                        <select name="to">
+                            <option value="usd">USD</option>
+                            <option value="inr" selected>INR</option>
+                            <option value="eur">EUR</option>
+                            <option value="aud">AUD</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="msg">
+                1USD=80INR
+            </div>
+            <button>
+                Get Exchange Rate
+            </button>
+        </form>
+    </div>
+    <script src="./images/codes.js"></script>
+    <script src="app.js"></script>
+</body>
